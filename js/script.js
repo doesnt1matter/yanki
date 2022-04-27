@@ -31,6 +31,19 @@ window.addEventListener("scroll", () => {
     }
 })
 
+const buttons = document.querySelectorAll("button")
+for (let index = 0; index < buttons.length; index++) {
+    const button = buttons[index];
+    button.onmousedown = () => {
+        button.classList.add("_tap")
+    }
+    button.onmouseup = () => {
+        setTimeout(() => {
+            button.classList.remove("_tap")
+        }, 200)
+    }
+}
+
 const swiper = new Swiper('.swiper', {
     simulateTouch: true,
     grabCursor: true,

@@ -89,6 +89,7 @@ select {
   font-size: calc(32px + 1.09375vw);
 }
 
+.subscribe-title__text,
 .categoies-title__text {
   font-family: "Raleway-Light";
   line-height: 42px;
@@ -107,13 +108,53 @@ select {
   font-size: calc(16px + 0.15625vw);
 }
 
+.subscribe__description,
+.subscribe__input,
 .categories-slide-title__text,
 .fullscreen-subtitle__text,
-.input {
+.input,
+.subscribe__button {
   font-family: "Raleway-ExtraLight";
   line-height: 21px;
   font-size: 16px;
   font-size: calc(14px + 0.15625vw);
+}
+
+.subscribe__button {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+  background: #E0BEA2;
+  border: none;
+  color: white;
+  padding: 13px 20px;
+}
+
+._tap.subscribe__button {
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+  background: #CCA88A;
+  -webkit-box-shadow: inset 0px 3px 7px rgba(37, 37, 37, 0.15);
+          box-shadow: inset 0px 3px 7px rgba(37, 37, 37, 0.15);
+}
+
+.subscribe__button:hover {
+  -webkit-filter: drop-shadow(0px 5px 7px rgba(37, 37, 37, 0.15));
+          filter: drop-shadow(0px 5px 7px rgba(37, 37, 37, 0.15));
+}
+
+.subscribe__input input {
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  outline: none;
+  border: 1px solid #252525;
+}
+
+.subscribe__input input:focus {
+  border: 1px solid #E0BEA2;
 }
 
 @font-face {
@@ -473,6 +514,10 @@ select {
   -o-transition: all 0s;
   transition: all 0s;
   margin-right: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .header-selects-list-title__arrow {
@@ -497,6 +542,13 @@ select {
   text-align: center;
   border-top: 1px solid #E0BEA2;
   padding: 2px 0;
+}
+
+.header-selects-list-menu-position__text {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .header-buttons__button {
@@ -686,38 +738,11 @@ select {
   height: 450px;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: #E0BEA2;
-}
-
-.swiper-button-disabled {
-  display: none;
-}
-
-.swiper-button-prev svg {
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-
 .categories-slide {
   position: relative;
   margin: 0 auto;
   width: 95%;
   height: 100%;
-  margin-right: 15px;
 }
 
 .categories-slide__img {
@@ -751,6 +776,76 @@ select {
 .categories-slide-title__text {
   font-size: 18px;
   color: white;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #E0BEA2;
+  position: absolute;
+}
+
+.swiper-button-disabled {
+  display: none;
+}
+
+.swiper-button-prev {
+  left: 20;
+}
+
+.swiper-button-prev svg {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.swiper-button-next {
+  right: 20;
+}
+
+.subscribe__wrap {
+  margin-bottom: 50px;
+}
+
+.subscribe__title {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+.subscribe__input {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.subscribe__input input {
+  padding: 12px 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.subscribe__button {
+  display: block;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 600px;
+}
+
+.subscribe__description {
+  color: #252525;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 @media (max-width: 1024px) {
@@ -873,6 +968,7 @@ select {
     font-size: calc(32px + 23.8 * (100vw - 320px) / 1280);
   }
 
+  .subscribe-title__text,
   .categoies-title__text {
     font-size: calc(24px + 20.4 * (100vw - 320px) / 1280);
   }
@@ -885,9 +981,12 @@ select {
     font-size: calc(16px + 3.4 * (100vw - 320px) / 1280);
   }
 
+  .subscribe__description,
+  .subscribe__input,
   .categories-slide-title__text,
   .fullscreen-subtitle__text,
-  .input {
+  .input,
+  .subscribe__button {
     font-size: calc(14px + 3.4 * (100vw - 320px) / 1280);
   }
 }
@@ -922,7 +1021,7 @@ select {
 
 @media (max-width: 400px) {
   .swiper-slide {
-    height: 230px;
+    height: 300px;
   }
 
   .swiper-button-prev,
